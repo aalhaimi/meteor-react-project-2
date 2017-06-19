@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import {render} from 'react-dom';
 import {createContainer} from 'meteor/react-meteor-data';
 import Items from '../api/items';
@@ -27,6 +28,12 @@ import Item from './Item';
 }})
 @autobind
 export default class App extends Component {
+
+    static propTypes = {
+        itemsReady: PropTypes.bool,
+        items: PropTypes.array,
+        showall: PropTypes.bool,
+    }
 
     addItems(event) {
         event.preventDefault();
